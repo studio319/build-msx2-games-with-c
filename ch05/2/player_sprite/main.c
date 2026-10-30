@@ -1,0 +1,20 @@
+#include "msxgl.h"
+#include "player.h"
+
+void main()
+{
+    VDP_SetMode(VDP_MODE_SCREEN5);
+    VDP_SetColor(COLOR_BLACK);
+    VDP_EnableVBlank(TRUE);
+    VDP_ClearVRAM();
+
+    VDP_SetSpriteFlag(VDP_SPRITE_SIZE_16 | VDP_SPRITE_SCALE_1);
+    VDP_EnableSprite(TRUE);
+
+    Player_Init();
+    
+    while(1)
+    {
+        Halt();
+    }
+}
